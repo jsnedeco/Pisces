@@ -80,7 +80,7 @@ namespace Psara.Tests
 
             var optionsExpectationsDict = new Dictionary<string, Action<PsaraOptions>>();
 
-            optionsExpectationsDict.Add("-vcf My.vcf", (o) => Assert.Equal("My.vcf", o.InputVcf));
+            optionsExpectationsDict.Add("-vcf My.vcf", (o) => Assert.Equal("My.vcf", o.VcfPath));
             optionsExpectationsDict.Add("-out outDir", (o) => Assert.Equal("outDir", o.OutputDirectory));
             optionsExpectationsDict.Add("-log My.log", (o) => Assert.Equal("My.log", o.LogFileNameBase));
             optionsExpectationsDict.Add("-roi myROI.txt", (o) => Assert.Equal("myROI.txt", o.GeometricFilterParameters.RegionOfInterestPath));
@@ -93,7 +93,7 @@ namespace Psara.Tests
 
             var optionsExpectationsDict = new Dictionary<string, Action<PsaraOptions>>();
 
-            optionsExpectationsDict.Add("--VCF My.vcf", (o) => Assert.Equal("My.vcf", o.InputVcf));
+            optionsExpectationsDict.Add("--VCF My.vcf", (o) => Assert.Equal("My.vcf", o.VcfPath));
             optionsExpectationsDict.Add("--OutFolder outDir", (o) => Assert.Equal("outDir", o.OutputDirectory));
             optionsExpectationsDict.Add("--Log My.log", (o) => Assert.Equal("My.log", o.LogFileNameBase));
             optionsExpectationsDict.Add("--ROI myROI.txt", (o) => Assert.Equal("myROI.txt", o.GeometricFilterParameters.RegionOfInterestPath));
@@ -106,7 +106,7 @@ namespace Psara.Tests
 
             var optionsExpectationsDict = new Dictionary<string, Action<PsaraOptions>>();
 
-            optionsExpectationsDict.Add("-VCF My.vcf", (o) => Assert.Equal("My.vcf", o.InputVcf));
+            optionsExpectationsDict.Add("-VCF My.vcf", (o) => Assert.Equal("My.vcf", o.VcfPath));
             optionsExpectationsDict.Add("-OutFolder outDir", (o) => Assert.Equal("outDir", o.OutputDirectory));
             optionsExpectationsDict.Add("-Log My.log", (o) => Assert.Equal("My.log", o.LogFileNameBase));
             optionsExpectationsDict.Add("-ROI myROI.txt", (o) => Assert.Equal("myROI.txt", o.GeometricFilterParameters.RegionOfInterestPath));
@@ -185,19 +185,28 @@ namespace Psara.Tests
 
             //test 3: if an uncreatable directory is supplied, check a parsing error is thrown
 
-            arguments = new string[] { "-vcf", testVcfPath, "-roi", roiPath, "-outfolder", "This..:&^$*%WontWOrk:!!" };
+            string crazyDir="This//..:\\&^$*%WontWOrk:!!"; //tjd, ha ha, no it can be created by UNIX...
+            //allow linux/unix to skip this.. otherwise they would fail for being smart..
+            var platform = Environment.OSVersion.Platform.ToString().ToLower();
+            if ((platform.Contains("unix" )) || (platform.Contains("linux" )))
+            {
+                Assert.True(true);
+            }
+            else
+            {
+                arguments = new string[] { "-vcf", testVcfPath, "-roi", roiPath, "-outfolder", crazyDir };
+                bool doesItExist=Directory.Exists(crazyDir);
 
-            Assert.False(Directory.Exists("This..:&^$*%WontWOrk:!!"));
-            ApplicationOptionParser = new PsaraOptionsParser();
-            ApplicationOptionParser.ParseArgs(arguments);
-            Options = (ApplicationOptionParser).PsaraOptions;
+                Assert.False(doesItExist);
+                ApplicationOptionParser = new PsaraOptionsParser();
+                ApplicationOptionParser.ParseArgs(arguments);
+                Options = (ApplicationOptionParser).PsaraOptions;
 
-            Assert.Equal("This..:&^$*%WontWOrk:!!", Options.OutputDirectory);
-            Assert.True(ApplicationOptionParser.ParsingFailed);
-            Assert.Equal(160, ApplicationOptionParser.ParsingResult.ExitCode);
-            Assert.False(Directory.Exists("This..:&^$*%WontWOrk:!!"));
+                Assert.Equal(crazyDir, Options.OutputDirectory);
+                Assert.True(ApplicationOptionParser.ParsingFailed);
+                Assert.Equal(160, ApplicationOptionParser.ParsingResult.ExitCode);
+                Assert.False(Directory.Exists(crazyDir));
+            }
         }
-
-
     }
 }

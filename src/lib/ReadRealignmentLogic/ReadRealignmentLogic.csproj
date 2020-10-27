@@ -1,10 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <Version>5.2.10.49</Version>
-    <Company>Illumina</Company>
-    <Copyright>Copyright © Illumina 2019</Copyright>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,3 +11,4 @@
   </ItemGroup>
 
 </Project>
+

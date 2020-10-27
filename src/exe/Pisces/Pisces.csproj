@@ -1,18 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>Pisces</AssemblyName>
-    <OutputType>Exe</OutputType>
-    <PackageId>Pisces</PackageId>
-    
-    
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>5.2.10.49</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
-    <RepositoryUrl>https://github.com/Illumina/Pisces</RepositoryUrl>
+     <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
@@ -20,27 +11,20 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
 
   <ItemGroup>
-    <None Update="..\..\redist\libFileCompression.so">
-      <Link>libFileCompression.so</Link>
+    <Content Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-    <None Update="..\..\..\redist\FileCompression.dll">
-      <Link>FileCompression.dll</Link>
+    </Content>
+    <Content Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-    <None Update="FileCompression.dll;libFileCompression.so">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="..\..\..\redist\*" CopyToPublishDirectory="PreserveNewest" />
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.IO\Alignment.IO.csproj" />
-    <ProjectReference Include="..\..\lib\CommandLine.IO\CommandLine.Util.csproj" />
+    <ProjectReference Include="..\..\lib\CommandLine.Util\CommandLine.Util.csproj" />
     <ProjectReference Include="..\..\lib\CommandLine.Options\CommandLine.Options.csproj" />
     <ProjectReference Include="..\..\lib\Common.IO\Common.IO.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.Calculators\Pisces.Calculators.csproj" />
@@ -55,13 +39,5 @@
     <PackageReference Include="System.Threading.Tasks.Parallel" Version="4.3.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Update="..\..\..\redist\FileCompression.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Update="..\..\..\redist\libFileCompression.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
+

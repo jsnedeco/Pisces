@@ -1,17 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <SonarQubeExclude>true</SonarQubeExclude>
-    <AssemblyName>Pisces.Tests</AssemblyName>
-    <PackageId>Pisces.Tests</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>5.2.10.49</Version>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+
+
+  <ItemGroup>
+    <Content Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="..\SharedData\Genomes\Bacillus_cereus\Sequence\WholeGenomeFasta\GenomeSize.xml" Link="SharedData\Genomes\Bacillus_cereus\Sequence\WholeGenomeFasta\GenomeSize.xml">
@@ -37,20 +43,7 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="..\..\redist\libFileCompression.so">
-      <Link>libFileCompression.so</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="..\..\redist\FileCompression.dll">
-      <Link>FileCompression.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="FileCompression.dll;libFileCompression.so;TestData\*">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
+  
   <ItemGroup>
     <ProjectReference Include="..\..\exe\Pisces\Pisces.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
@@ -85,15 +78,10 @@
     <Folder Include="SharedData\Genomes\invalidGenomeSize\" />
     <Folder Include="SharedData\Genomes\PhiX\WholeGenomeFasta\" />
     <Folder Include="SharedData\StitcherTestData\" />
+    <Folder Include="TestData\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="..\SharedData\Bams\Bcereus_S4.bam" Link="SharedData\Bams\Bcereus_S4.bam">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -189,12 +177,11 @@
     </None>
   </ItemGroup>
 
-  <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
-    <PostBuildEvent>
-</PostBuildEvent>
-    <Version>1.0.0.0</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="TestData\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
+

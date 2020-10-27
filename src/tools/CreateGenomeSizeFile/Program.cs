@@ -7,6 +7,7 @@ using CommandLine.Util;
 
 namespace CreateGenomeSizeFile
 {
+
     public class Program : BaseApplication<CreateGenomeSizeFileOptions>
     {
         static string _commandlineExample = "-s <species name and build> -g <genome path> -out <output folder>";
