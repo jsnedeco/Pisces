@@ -1,11 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <Version>5.2.10.49</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
-    <Company>Illumina</Company>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,13 +17,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\CommandLine.IO\CommandLine.Util.csproj" />
+    <ProjectReference Include="..\..\lib\CommandLine.Util\CommandLine.Util.csproj" />
     <ProjectReference Include="..\..\lib\CommandLine.Options\CommandLine.Options.csproj" />
     <ProjectReference Include="..\..\lib\Common.IO\Common.IO.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.Genotyping\Pisces.Genotyping.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.IO\Pisces.IO.csproj" />
     <ProjectReference Include="..\..\tools\AdaptiveGenotyper\AdaptiveGenotyper.csproj" />
     <ProjectReference Include="..\TestUtilities\TestUtilities.csproj" />
+  </ItemGroup>
+
+ <ItemGroup>
+    <Content Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -69,15 +77,6 @@
     <None Update="TestData\example_S1.genome.vcf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="TestData\GM12877-1FT-r1_S17.stitched.sorted.genome.model">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\GM12877-1FT-r1_S17.stitched.sorted.genome.vcf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="TestData\GM12877-1FT-r1_S17.stitched.sorted.recal.vcf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="TestData\MultiAllelicVariantTest.recal.vcf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -85,6 +84,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\ParseDepthTest.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\testData.PairRealigned.genome.model">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\testData.PairRealigned.genome.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\testData.PairRealigned.recal.vcf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TestData\ThreeCoins.csv">
@@ -111,3 +119,4 @@
   </ItemGroup>
 
 </Project>
+

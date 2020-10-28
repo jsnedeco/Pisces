@@ -1,29 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <RepositoryUrl>https://github.com/Illumina/Pisces</RepositoryUrl>
-    <Version>5.2.10.49</Version>
-    <Company>Illumina</Company>
-    <Copyright>Copyright © Illumina 2019</Copyright>
+      <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\lib\CommandLine.IO\CommandLine.Util.csproj" />
+    <ProjectReference Include="..\..\lib\CommandLine.Util\CommandLine.Util.csproj" />
     <ProjectReference Include="..\..\lib\CommandLine.Options\CommandLine.Options.csproj" />
     <ProjectReference Include="..\..\lib\Common.IO\Common.IO.csproj" />
-    <ProjectReference Include="..\..\lib\Pisces.Domain\Pisces.Domain.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.IO\Pisces.IO.csproj" />
   </ItemGroup>
 
 </Project>
+

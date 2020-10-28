@@ -1,29 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <SonarQubeExclude>true</SonarQubeExclude>
-    <AssemblyName>Reformat.Tests</AssemblyName>
-    <PackageId>Uncrush.Tests</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>5.2.10.49</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
+<PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
 
   <ItemGroup>
-    <None Update="..\..\redist\libFileCompression.so">
-      <Link>libFileCompression.so</Link>
+    <None Update="TestData\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="..\..\redist\FileCompression.dll">
-      <Link>FileCompression.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="FileCompression.dll;libFileCompression.so;TestData\*">
+    <None Include="..\..\..\redist\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -50,3 +38,4 @@
   </ItemGroup>
 
 </Project>
+

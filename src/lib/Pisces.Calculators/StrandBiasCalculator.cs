@@ -2,6 +2,7 @@
 using Pisces.Domain.Models;
 using Pisces.Domain.Models.Alleles;
 using Pisces.Domain.Types;
+using MathNet.Numerics;
 
 namespace Pisces.Calculators
 {

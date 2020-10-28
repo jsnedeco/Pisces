@@ -1,4 +1,6 @@
-﻿using Xunit;
+﻿using System.IO;
+using Xunit;
+
 
 namespace VariantPhasing.Tests
 {
@@ -8,9 +10,9 @@ namespace VariantPhasing.Tests
         public void LogFolder()
         {
             var options = new ScyllaApplicationOptions();
-            options.OutputDirectory = @"C:\Out";
+            options.OutputDirectory = "VariantPhasingTestOut";
             options.SetIODirectories("Scylla");
-            Assert.Equal(@"C:\Out\ScyllaLogs", options.LogFolder);
+            Assert.Equal(Path.Combine("VariantPhasingTestOut","ScyllaLogs"), options.LogFolder);
         }
     }
 }

@@ -32,24 +32,41 @@ namespace Common.IO
         private static string GetCopyright(Assembly entryAssembly)
         {
             var attr = GetAssemblyAttributes<AssemblyCopyrightAttribute>(entryAssembly);
-            return attr?.Copyright.Replace("©", "(c)") ?? $"(c) {DateTime.Now.Year} Illumina, Inc.";
+
+             if (attr == null)
+              return ("Update Me");
+
+            else
+                return  attr.ToString();
         }
 
         private static string GetVersion(Assembly entryAssembly)
         {
             var attr = GetAssemblyAttributes<AssemblyFileVersionAttribute>(entryAssembly);
+            
+            if (attr == null)
+              return ("Update Me");
+            
             return attr?.Version;
         }
 
         private static string GetInformationalVersion(Assembly entryAssembly)
         {
             var attr = GetAssemblyAttributes<AssemblyInformationalVersionAttribute>(entryAssembly);
+            
+            if (attr == null)
+              return ("Update Me");
+            
             return attr?.InformationalVersion;
         }
 
         private static string GetTitle(Assembly entryAssembly)
         {
             var attr = GetAssemblyAttributes<AssemblyTitleAttribute>(entryAssembly);
+        
+            if (attr == null)
+              return ("Update Me");
+            
             return attr?.Title;
         }
 
@@ -58,6 +75,11 @@ namespace Common.IO
             var attrs = entryAssembly.GetCustomAttributes(typeof(T)) as T[];
             // ReSharper disable once PossibleNullReferenceException
             return attrs.Length == 0 ? default(T) : attrs[0];
+        }
+
+        public static bool TestLoaded()
+        {
+           return true;
         }
 
     }

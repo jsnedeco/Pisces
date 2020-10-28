@@ -1,5 +1,6 @@
 ﻿using System;
 using Pisces.Domain.Models.Alleles;
+using MathNet.Numerics;
 
 namespace Pisces.Calculators
 {

@@ -1,15 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <SonarQubeExclude>true</SonarQubeExclude>
-    <AssemblyName>Scylla.Tests</AssemblyName>
-    <PackageId>Scylla.Tests</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>5.2.10.49</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
@@ -21,12 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\..\..\redist\libFileCompression.so" Link="libFileCompression.so">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="..\SharedData\Bams\Bcereus_S4.bam" Link="SharedData\Bams\Bcereus_S4.bam">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -51,14 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="..\..\redist\libFileCompression.so">
-      <Link>libFileCompression.so</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="..\..\redist\FileCompression.dll">
-      <Link>FileCompression.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="TestData\Bcereus_S4.out.phased.vcf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -88,6 +67,24 @@
     </None>
     <None Update="TestData\small_S1.out.somatic.genome.vcf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TestWithForcedReport.exp.phased.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TestWithForcedReport.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TestWithNCandUSData.exp.phased.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TestWithNCandUSData.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TinyDiploid.exp.phased.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestData\TinyDiploid.vcf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
@@ -119,3 +116,4 @@
   </ItemGroup>
 
 </Project>
+

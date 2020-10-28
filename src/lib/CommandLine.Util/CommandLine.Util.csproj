@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <AssemblyName>CommandLine.Util</AssemblyName>
+    <PackageId>CommandLine.Util</PackageId>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+
+ <ItemGroup>
+    <ProjectReference Include="..\..\lib\Common.IO\Common.IO.csproj" />
+  </ItemGroup>
+
+</Project>
+

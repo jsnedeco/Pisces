@@ -1,15 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <SonarQubeExclude>true</SonarQubeExclude>
-    <AssemblyName>Pisces.Calculators.Tests</AssemblyName>
-    <PackageId>Pisces.Calculators.Tests</PackageId>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>5.2.10.49</Version>
-    <Copyright>Copyright © Illumina 2019</Copyright>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
@@ -18,6 +11,7 @@
     <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.Logic\Alignment.Logic.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.Calculators\Pisces.Calculators.csproj" />
+        <ProjectReference Include="..\..\lib\Pisces.Processing\Pisces.Processing.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.Genotyping\Pisces.Genotyping.csproj" />
     <ProjectReference Include="..\TestUtilities\TestUtilities.csproj" />
   </ItemGroup>
@@ -34,3 +28,4 @@
   </ItemGroup>
 
 </Project>
+
