@@ -7,7 +7,7 @@ namespace CommandLine.Util
     {
         public static string GetWebsite()
         {
-            return (@"https://github.com/ <update me!!>");
+            return (@"https://github.com/tamsen/Pisces");
         }
 
 

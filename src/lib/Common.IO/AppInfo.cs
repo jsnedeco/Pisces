@@ -10,6 +10,7 @@ namespace Common.IO
 
         public static readonly string Copyright;
         public static readonly string Title;
+        public static readonly string Reference;
         public static readonly string InformationalVersion;
         public static readonly string Version;
 
@@ -25,6 +26,7 @@ namespace Common.IO
 
             Copyright = GetCopyright(assembly);
             Title = GetTitle(assembly);
+            Reference = GetReference(assembly);
             Version = GetVersion(assembly);
             InformationalVersion = GetInformationalVersion(assembly);
         }
@@ -34,7 +36,7 @@ namespace Common.IO
             var attr = GetAssemblyAttributes<AssemblyCopyrightAttribute>(entryAssembly);
 
              if (attr == null)
-              return ("Update Me");
+              return ("GNU GENERAL PUBLIC LICENSE");
 
             else
                 return  attr.ToString();
@@ -55,9 +57,18 @@ namespace Common.IO
             var attr = GetAssemblyAttributes<AssemblyInformationalVersionAttribute>(entryAssembly);
             
             if (attr == null)
-              return ("Update Me");
+              return ("5.2.11.0");
             
             return attr?.InformationalVersion;
+        }
+
+        private static string GetReference(Assembly entryAssembly)
+        {
+            string publication = "Tamsen Dunn, Gwenn Berry, Dorothea Emig-Agius, Yu Jiang, Serena Lei, Anita Iyer, Nitin Udar, Han-Yu Chuang, Jeff Hegarty, Michael Dickover, Brandy Klotzle, Justin Robbins, Marina Bibikova, Marc Peeters, Michael Strömberg, " +
+            "Pisces: an accurate and versatile variant caller for somatic and germline next-generation sequencing data, " + 
+            "Bioinformatics, Volume 35, Issue 9, 1 May 2019, " + 
+            "Pages 1579–1581, https://doi.org/10.1093/bioinformatics/bty849";
+            return publication;
         }
 
         private static string GetTitle(Assembly entryAssembly)
@@ -65,7 +76,7 @@ namespace Common.IO
             var attr = GetAssemblyAttributes<AssemblyTitleAttribute>(entryAssembly);
         
             if (attr == null)
-              return ("Update Me");
+              return ("Pisces Software");
             
             return attr?.Title;
         }

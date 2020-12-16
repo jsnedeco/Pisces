@@ -16,7 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
     <ProjectReference Include="..\..\lib\BamStitchingLogic\BamStitchingLogic.csproj" />
-    <ProjectReference Include="..\..\lib\Gemini\Gemini.csproj" />
+    <ProjectReference Include="..\..\exe\Gemini\Gemini.csproj" />
     <ProjectReference Include="..\Alignment.Logic.Tests\Alignment.Logic.Tests.csproj" />
     <ProjectReference Include="..\TestUtilities\TestUtilities.csproj" />
   </ItemGroup>

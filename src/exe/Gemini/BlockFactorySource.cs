@@ -24,7 +24,6 @@ namespace Gemini
         private readonly GeminiSampleOptions _geminiSampleOptions;
         private readonly RealignmentOptions _realignmentOptions;
         private readonly IGeminiFactory _geminiFactory;
-        private readonly IGeminiDataOutputFactory _dataOutputFactory;
         private readonly int _maxDegreeOfParallelism;
 
         public BlockFactorySource(StitcherOptions stitcherOptions, GeminiOptions geminiOptions, Dictionary<int, string> refIdMapping, BamRealignmentFactory bamRealignmentFactory,

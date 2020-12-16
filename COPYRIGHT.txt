@@ -1,3 +1,22 @@
+
+https://github.com/tamsen/Pisces
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+at your option) any later version.
+
+******************************************************************
+******************************************************************
+******************************************************************
+
+This distribution includes the following code libraries/external tools.
+These are distributed according to the licensing terms governing each
+library:
+
+Was forked from https://github.com/Illumina/Pisces
+on Feb 19, 2019.
+
 Pisces - Variant Caller
 Copyright (c) 2013-2019 Illumina, Inc.
 
@@ -13,15 +32,6 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
-******************************************************************
-******************************************************************
-******************************************************************
-
-This distribution includes the following code libraries/external tools.
-These are distributed according to the licensing terms governing each
-library:
 
 
 ******************************************************************

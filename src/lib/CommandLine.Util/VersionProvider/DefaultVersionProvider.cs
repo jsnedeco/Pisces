@@ -1,5 +1,4 @@
-﻿using CommandLine.Util;
-using Common.IO;
+﻿using Common.IO;
 
 namespace CommandLine.VersionProvider
 {
