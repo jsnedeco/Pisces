@@ -64,13 +64,13 @@ for f in glob(search_root):
 
   if numTests < 3:
       print(fname + " needs more tests")
-	continue
+      continue
  
   percentpassing=100.0*numPass/numTests
   if percentpassing < 100:
-        sys.stdout.write(RED)
-  	print("precent passing: " + str(100.0*numPass/numTests))
-	sys.stdout.write(RESET)
+      sys.stdout.write(RED)
+      print("precent passing: " + str(100.0*numPass/numTests))
+      sys.stdout.write(RESET)
   else:
         sys.stdout.write(GREEN)
   	print("precent passing: " + str(100.0*numPass/numTests))

@@ -69,10 +69,6 @@
   <ItemGroup>
     <Folder Include="SharedData\Genomes\chr19\" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <PreBuildEvent></PreBuildEvent>
-    <PostBuildEvent>
       
 </Project>
 
