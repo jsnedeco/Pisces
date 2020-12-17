@@ -167,7 +167,7 @@ namespace CommandLine.Application
 
             Console.WriteLine("Some problems were encountered when parsing the command line options:");
             Console.WriteLine("{0}", ParsingResult.ErrorBuilder);
-            Console.WriteLine("For a complete list of command line options, type \"dotnet {0} -h\"", Path.GetFileName(Environment.GetCommandLineArgs()[0]));
+            Console.WriteLine("For a complete list of command line options, type \"{0} -h\"", Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0]));
 
             return true;
         }
