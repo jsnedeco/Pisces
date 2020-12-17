@@ -7,6 +7,7 @@ using Gemini.Utility;
 
 namespace Gemini
 {
+    /*
     public class Program : BaseApplication<GeminiApplicationOptions>
     {
         static string _commandlineExample = " --bam <bam path> --genome <genome path> --samtools <samtools path> --outFolder <output path> --numThreads 4";
@@ -60,5 +61,5 @@ namespace Gemini
 
         }
 
-    }
+    }*/
 }

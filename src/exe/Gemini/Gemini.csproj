@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <!--ProjectReference Include="..\..\lib\Gemini.Lib\Gemini.Lib\.csproj" /-->
+    <ProjectReference Include="..\..\lib\Gemini.Lib\Gemini.Lib.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.IO\Alignment.IO.csproj" />
     <ProjectReference Include="..\..\lib\Alignment.Logic\Alignment.Logic.csproj" />
