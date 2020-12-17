@@ -7,6 +7,7 @@ using Pisces.Domain.Options;
 using Pisces.Domain.Models.Alleles;
 using Pisces.Domain.Types;
 using Pisces.IO.Interfaces;
+using Common.IO;
 
 namespace Pisces.IO
 {
@@ -42,10 +43,11 @@ namespace Pisces.IO
                 throw new IOException("Stream already closed");
 
             var currentAssembly = Assembly.GetEntryAssembly().GetName();  //for GetCallingAssembly, originally from .net core
-
+            var currentAssemblyVersion = Common.IO.PiscesSuiteAppInfo.Version;
+            
             Writer.WriteLine("##fileformat=" + VcfVersion);
             Writer.WriteLine("##fileDate=" + string.Format("{0:yyyyMMdd}", DateTime.Now));
-            Writer.WriteLine("##source=" + currentAssembly.Name + " " + currentAssembly.Version);
+            Writer.WriteLine("##source=" + currentAssembly.Name + " " + currentAssemblyVersion);
             Writer.WriteLine("##" + currentAssembly.Name + "_cmdline=\"" + (_context.QuotedCommandLineString == null? "" : string.Join(" ",_context.QuotedCommandLineString)) + "\"");
             Writer.WriteLine("##reference=" + _context.ReferenceName);
             //write Alt Allele

@@ -276,6 +276,7 @@ namespace TestUtilities
                 if (!expectedLines[i].ToLower().Contains("filedate")
                     && !expectedLines[i].ToLower().Contains("##reference")
                     && !expectedLines[i].ToLower().Contains("cmdline")
+                    && !expectedLines[i].ToLower().Contains("source")
                     && !expectedLines[i].ToLower().Contains("1.0.0.0")) 
                     Assert.Equal(expectedLines[i], observedLines[i]);
             }

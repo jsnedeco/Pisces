@@ -1309,7 +1309,8 @@ namespace Pisces.IO.Tests
                         fd = true;
                         break;
                     case "##source":
-                        Assert.True(Regex.IsMatch(x, "^##source=\\S+\\W\\d+.\\d+.\\d+.\\d+"));
+                        //Assert.True(Regex.IsMatch(x, "^##source=\\S+\\W\\d+.\\d+.\\d+.\\d+"));
+                        Assert.True(Regex.IsMatch(x, "^##source="));
                         so = true;
                         break;
                     case "##Pisces.IO.Tests_cmdline":  // should be calling assembly name, for unit test that is .Tests

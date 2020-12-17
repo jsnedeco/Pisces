@@ -47,7 +47,7 @@ namespace Common.IO
             var attr = GetAssemblyAttributes<AssemblyFileVersionAttribute>(entryAssembly);
             
             if (attr == null)
-                return ("5.2.11.0");
+                return ("5.3.0.0");
             
             return attr?.Version;
         }
@@ -57,7 +57,7 @@ namespace Common.IO
             var attr = GetAssemblyAttributes<AssemblyInformationalVersionAttribute>(entryAssembly);
             
             if (attr == null)
-              return ("5.2.11.0");
+              return ("5.3.0.0");
             
             return attr?.InformationalVersion;
         }

@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Threading;
 using System.Collections.Generic;
 
+using Common.IO;
+
 namespace Common.IO.Utility
 {
     public class Logger
@@ -69,7 +71,9 @@ namespace Common.IO.Utility
                 _logfileName = logFilePath;
                 Write(("************* Starting **************"));
 
-                Write("Version:  " + Assembly.GetEntryAssembly().GetName().Version);
+                string version = Common.IO.PiscesSuiteAppInfo.Version;
+
+                Write("Version:  " + version);
 
 
                 return true;
