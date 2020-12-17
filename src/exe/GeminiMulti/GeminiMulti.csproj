@@ -1,11 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
 
   <ItemGroup>
     <Content Include="..\..\..\redist\FileCompression.dll" Link="FileCompression.dll">
@@ -19,10 +22,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\Gemini\Gemini.csproj" />
+    <ProjectReference Include="..\..\lib\Gemini.Lib\Gemini.Lib.csproj" />
+    <ProjectReference Include="..\..\lib\CommandLine.Options\CommandLine.Options.csproj" />
+    <ProjectReference Include="..\..\lib\CommandLine.Util\CommandLine.Util.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.IO\Pisces.IO.csproj" />
     <ProjectReference Include="..\..\lib\Pisces.Processing\Pisces.Processing.csproj" />
-  </ItemGroup>
+    <ProjectReference Include="..\..\lib\Alignment.Domain\Alignment.Domain.csproj" />
+    <ProjectReference Include="..\..\lib\Alignment.IO\Alignment.IO.csproj" />
+    <ProjectReference Include="..\..\lib\Alignment.Logic\Alignment.Logic.csproj" />
+    <ProjectReference Include="..\..\lib\BamStitchingLogic\BamStitchingLogic.csproj" />
+    <ProjectReference Include="..\..\lib\ReadRealignmentLogic\ReadRealignmentLogic.csproj" />
+    <ProjectReference Include="..\..\lib\StitchingLogic\StitchingLogic.csproj" />
+  
+</ItemGroup>
 
   <ItemGroup>
     <Reference Include="Microsoft.Extensions.CommandLineUtils">

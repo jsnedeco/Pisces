@@ -16,9 +16,17 @@ namespace GeminiMulti
         /// <returns></returns>
         public virtual ICliTask GetCliTask(string[] args, string chrom, string exePath, string outdir, int chromRefId)
         {
-            return new CliTask("Gemini_" + chrom, "dotnet",
-                $"\"{exePath}\" " +
+            return new CliTask("Gemini_" + chrom, 
+                exePath, 
                 string.Join(" ", args) + " --chromRefId \"" + chromRefId + "\" --outFolder \"" + outdir + "\"");
+
+            //return new CliTask("Gemini_" + chrom, " ",
+            //    $"\"{exePath}\" " +
+            //    string.Join(" ", args) + " --chromRefId \"" + chromRefId + "\" --outFolder \"" + outdir + "\"");
+
+            //return new CliTask("Gemini_" + chrom, "dotnet",
+            //    $"\"{exePath}\" " +
+            //    string.Join(" ", args) + " --chromRefId \"" + chromRefId + "\" --outFolder \"" + outdir + "\"");
 
         }
 

@@ -20,8 +20,8 @@ namespace CommandLine.Util
             // create the filler string
             //var appInfo = Common.IO.PiscesSuiteAppInfo;
             bool loaded = Common.IO.PiscesSuiteAppInfo.TestLoaded();
-            if (loaded)
-                Console.WriteLine("loaded!");
+            //if (loaded)
+            //    Console.WriteLine("loaded!");
 
             string t = Common.IO.PiscesSuiteAppInfo.Title;
             string cr = Common.IO.PiscesSuiteAppInfo.Copyright;
@@ -49,6 +49,8 @@ namespace CommandLine.Util
             Console.ResetColor();
             Console.WriteLine("{0}{1}", filler, PiscesSuiteAppInfo.Copyright);
             Console.WriteLine("{0}{1}{2}", author, filler2, PiscesSuiteAppInfo.InformationalVersion);
+            Console.WriteLine("{0}\n", line);
+            Console.WriteLine("Please reference '{0}'\n", PiscesSuiteAppInfo.Reference);            
             Console.WriteLine("{0}\n", line);
         }
 

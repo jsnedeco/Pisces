@@ -13,7 +13,15 @@ namespace GeminiMulti.Tests
                 "Outdir", 1);
 
             string OS_SpecificString=Path.Combine("path", "with spaces","myexe");
-            Assert.Equal( "\"" + OS_SpecificString + "\" --args1 1thing -args2 another --chromRefId \"1\" --outFolder \"Outdir\"", task.CommandLineArguments);
+            
+            string expected_exe_string =  OS_SpecificString ;
+            string actual_exe_string = task.ExecutablePath;
+            Assert.Equal(expected_exe_string,actual_exe_string ); 
+
+
+            string expected_arg_string =  "--args1 1thing -args2 another --chromRefId \"1\" --outFolder \"Outdir\"";
+            string actual_arg_string = task.CommandLineArguments;
+            Assert.Equal(expected_arg_string,actual_arg_string );    
         }
     }
 }
