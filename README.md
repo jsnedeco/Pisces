@@ -19,7 +19,7 @@ Pisces source code is provided under the GPLv3 license. Pisces includes third pa
 For v5.3.0 and up,  64 bit Linux is required. 
 Or the software can be recompiled for a target of your choice. See the build instructions for more details. 
 
-For older versions, see the original [illumina fork](https://github.com/Illumina/Pisces)
+For older versions, see the original [illumina fork](https://github.com/Illumina/Pisces) .
 
 
 # Running from a binary distribution
@@ -67,7 +67,7 @@ To build all solutions, navigate to Pisces/src/scripts in your cloned repo and r
 
 For dev, open VisualStudioCode and from inside VisualStudioCode open the Pisces folder from the dowloaded github clone. Allow it to update dependances. You should be good to go.
 
-For older versions of Pisces (5.2 and below) a Windows box or virtual environment is required for dev work. See instructions on the original [illumina fork](https://github.com/Illumina/Pisces)
+For older versions of Pisces (5.2 and below) a Windows box or virtual environment is required for dev work. See instructions on the original [illumina fork](https://github.com/Illumina/Pisces) .
 
 
 # User Guide
