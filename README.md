@@ -1,6 +1,6 @@
 # README for Pisces 5.3 and up!
 
-This application calls low frequency variants, on linux or windows. It will run on tumor-only samples, and search for SNVs, MNVs, and small indels. It takes in .bams and generates .vcf or .gvcf files. It is included with most Illumina sequencing machines, starting with the MiSeq, and various BaseSpace workflows. The caller can also be run as a standalone program.  
+This application calls low frequency variants, on linux or windows. It will run on tumor-only samples, and search for SNVs, MNVs, and small indels. It takes in .bams and generates .vcf or .gvcf files. It is included with most Illumina sequencing machines, starting with the MiSeq in 2011, and various BaseSpace workflows. The caller can also be run as a standalone program.  
 
 POC: 
 [Tamsen Dunn](https://www.linkedin.com/in/tamsen-dunn-7340145) and
