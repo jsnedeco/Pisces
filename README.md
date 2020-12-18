@@ -9,7 +9,7 @@ POC:
 [Tamsen Dunn](https://www.linkedin.com/in/tamsen-dunn-7340145) and
 [Gwenn Berry](https://www.linkedin.com/in/gwenn-berry-43071939)
 
-Quick start: [Example command lines](https://github.com/tamsen/Pisces/wiki/Pisces-Quick-Start-5.2.9)
+Quick start: [Example command lines](https://github.com/tamsen/Pisces/wiki/Pisces-Quick-Start-5.3.0)
 
 # License
 Pisces source code is provided under the GPLv3 license. Pisces includes third party packages provided under other open source licenses, please see COPYRIGHT.txt for additional details.
