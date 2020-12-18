@@ -23,7 +23,7 @@ For older versions, see the original [illumina fork](https://github.com/Illumina
 
 ## For v5.3 and up:
 
-The uncompressed binary is ready to go as a stand alone. Uncompress with "tar xvzf <file>.tar.gz".  No other software is required. Only the linux OS is supported, although it is possible to recompile for other targets.
+The uncompressed binary is ready to go as a stand alone. Uncompress with "tar xvzf file.tar.gz".  No other software is required. Only the linux OS is supported, although it is possible to recompile for other targets.
 
 Example command line for v5.3 and up:
 
