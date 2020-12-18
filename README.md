@@ -2,6 +2,9 @@
 
 This application calls low frequency variants, on linux or windows. It will run on tumor-only samples, and search for SNVs, MNVs, and small indels. It takes in .bams and generates .vcf or .gvcf files. It is included with most Illumina sequencing machines, starting with the MiSeq in 2011, and various BaseSpace workflows. The caller can also be run as a standalone program.  
 
+Please cite us at: 
+Tamsen Dunn, Gwenn Berry, Dorothea Emig-Agius, Yu Jiang, Serena Lei, Anita Iyer, Nitin Udar, Han-Yu Chuang, Jeff Hegarty, Michael Dickover, Brandy Klotzle, Justin Robbins, Marina Bibikova, Marc Peeters, Michael Strömberg, Pisces: an accurate and versatile variant caller for somatic and germline next-generation sequencing data, Bioinformatics, Volume 35, Issue 9, 1 May 2019, Pages 1579–1581, https://doi.org/10.1093/bioinformatics/bty849
+
 POC: 
 [Tamsen Dunn](https://www.linkedin.com/in/tamsen-dunn-7340145) and
 [Gwenn Berry](https://www.linkedin.com/in/gwenn-berry-43071939)
