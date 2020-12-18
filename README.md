@@ -60,7 +60,7 @@ If you wish to build Pisces 5.3 and up, I recommend
 3) Install Visual Studio Code (if you plan to do dev or debugging).
 4) Clone the https://github.com/tamsen/Pisces repo
 
-To build all solutions, navigate to Pisces/src/scripts in you cloned repo and run "python build_standalone.py" .  To rebuild a single project, do "dotnet build /path/to/desired/prject" .
+To build all solutions, navigate to Pisces/src/scripts in you cloned repo and run "python build_standalone.py" .  To rebuild a single project, do "dotnet build /path/to/desired/project.csprj" .
 
 For dev, open VisualStudioCode and open the Pisces folder from the github clone. Allow it to update and dependances. You should be good to go.
 
