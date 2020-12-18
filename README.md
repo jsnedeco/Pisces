@@ -39,7 +39,7 @@ It is necessary to supply a reference genome following the -g argument. Referenc
 
 In previous versions, both linux and windows were supported. ".net core 2.2" must be installed, and then the uncompressed binary is ready to go. See the original [illumina fork](https://github.com/Illumina/Pisces) for more details.
 
-Example Commnand line for v5.2 and below:
+Example Command line for v5.2 and below:
 
 windows:
 
