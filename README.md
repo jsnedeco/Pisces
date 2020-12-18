@@ -1,6 +1,6 @@
 # README for Pisces 5.3 and up!
 
-This application calls low frequency variants, on linux or windows. It will run on tumor-only samples, and search for SNVs, MNVs, and small indels. It takes in .bams and generates .vcf or .gvcf files. It is included with the Illumina MiSeqReporter pipeline and various BaseSpace workflows. The caller can also be run as a standalone program.  
+This application calls low frequency variants, on linux or windows. It will run on tumor-only samples, and search for SNVs, MNVs, and small indels. It takes in .bams and generates .vcf or .gvcf files. It is included with most Illumina sequencing machines, starting with the MiSeq, and various BaseSpace workflows. The caller can also be run as a standalone program.  
 
 POC: 
 [Tamsen Dunn](https://www.linkedin.com/in/tamsen-dunn-7340145) and
@@ -23,7 +23,7 @@ For older versions, see the original [illumina fork](https://github.com/Illumina
 
 ## For v5.3 and up:
 
-The uncompressed binary is ready to go as a stand alone. No other software is required. Only the linux OS is supported.
+The uncompressed binary is ready to go as a stand alone. Uncompress with "tar xvzf <file>.tar.gz".  No other software is required. Only the linux OS is supported, although it is possible to recompile for other targets.
 
 Example command line for v5.3 and up:
 
@@ -37,7 +37,7 @@ It is necessary to supply a reference genome following the -g argument. Referenc
 
 ## For v5.2 and below:
 
-In previous versions, both linux and windows were supported. ".net core 2.2" must be installed, and then the uncompressed binary is ready to go. See the old fork for  more details..
+In previous versions, both linux and windows were supported. ".net core 2.2" must be installed, and then the uncompressed binary is ready to go. See the original [illumina fork](https://github.com/Illumina/Pisces) for more details.
 
 Example Commnand line for v5.2 and below:
 
@@ -48,7 +48,6 @@ dotnet Pisces.dll -bam C:\my\path\to\TestData\example_S1.bam -g C:\my\path\to\Wh
 linux:
 
 dotnet Pisces.dll -bam /my/path/to/TestData/example_S1.bam -g /my/path/to/WholeGenomeFasta 
-
 
 
 # Build instructions
@@ -65,7 +64,7 @@ To build all solutions, navigate to Pisces/src/scripts in you cloned repo and ru
 
 For dev, open VisualStudioCode and open the Pisces folder from the github clone. Allow it to update and dependances. You should be good to go.
 
-For older vserions of Pisces (5.2 and below) see instructions on the original [illumina fork](https://github.com/Illumina/Pisces)
+For older versions of Pisces (5.2 and below) a Windows box or virtual environment is required for dev work. See instructions on the original [illumina fork](https://github.com/Illumina/Pisces)
 
 
 # User Guide
