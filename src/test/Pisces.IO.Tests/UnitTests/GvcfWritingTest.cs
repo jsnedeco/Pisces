@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Pisces.IO.Tests.UnitTests
 {
-    class GvcfWritingTest
+    public class GvcfWritingTest
     {
         // multiple bams, one default genome
         private const string CHR19 = "chr19";
